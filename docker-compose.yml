@@ -2,9 +2,9 @@ version: '3.3'
 
 services:
   api:
-    container_name: pos.api
+    container_name: auth_usuarios.api
     build: ./app
-    command : gunicorn pos.wsgi:application --bind 0.0.0.0:3762
+    command : gunicorn auth_usuarios.wsgi:application --bind 0.0.0.0:3762
     volumes:
       - ./app:/usr/src/app
       - ./app/static:/usr/src/app/static
@@ -14,7 +14,7 @@ services:
       - ./app/.env
   
   nginx:
-    container_name: pos.proxy
+    container_name: auth_usuarios.proxy
     build: ./nginx
     volumes:
       - ./app/static:/usr/src/app/static

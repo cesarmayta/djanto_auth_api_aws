@@ -1,0 +1,9 @@
+#version 1
+django==3.2
+djangorestframework
+djangorestframework-simplejwt
+django-cors-headers
+mysqlclient
+python-decouple
+whitenoise
+gunicorn
